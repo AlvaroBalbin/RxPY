@@ -23,7 +23,7 @@ class Disposable(DisposableBase):
         """
 
         self.is_disposed = False
-        self.action: Action = action or noop
+        self.action: Action = action if action is not None else noop
 
         self.lock = RLock()
 
